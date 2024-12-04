@@ -36,8 +36,10 @@ class Dan {
                     }
                     System.out.println(" ");
                 }
+                System.out.println(" ");
             }
         }
+
 
         static class Start {
             public void ManyStart() {
@@ -90,6 +92,5 @@ class Dan {
             star.MakeStar();
             start.ManyStart();
         }
-
     }
 }
