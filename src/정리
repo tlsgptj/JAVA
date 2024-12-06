@@ -1,0 +1,40 @@
+< 제어문 >
+1. 조건문
+   - if(boolean형)
+   - switch(정수형+String)
+
+2. 반복문
+   - while(boolean형){}
+   - do{} while(boolean형);
+   - for(초기식;조건식;증감식){}
+
+< 예약어 >
+1. break
+   - loop, switch
+   - 첫번째 블럭 '나간다'
+   - labled break
+
+2. continue
+   - loop
+   - 조건이 맞으면 '건너뛴다'
+   - labled continue
+
+3. return
+   - 생성자 or 메소드 '어디서나' 나올 수 있음
+   - 호출한 '곳'이나 '놈'으로 '되돌린다'
+   - 메소드의 리턴타입이 void가 아니면 생략 불가
+
+< 연산자(Operator) >
+1. (데이터) 연산하게 하는 '기호'
+
+2. 종류
+	1) 산술 ex) +, -, *, /, %
+	2) 증감 ex) ++,  --
+	3) 대입 ex) =
+	4) 산술대입 ex) +=, -=, *=, /=, %=
+	5) 비트 ex) &, |, ~, 시프트( <<, >>, >>> )
+	6) 비교 ex) ==, !=, <, <=, >, >=
+	7) 논리 ex) &, &&, |, ||
+	8) 논리대입  ex) &=, |=
+	9) 조건 ex) A? B : C
+	10) instanceof ex) 객체 instanceof 클래스
