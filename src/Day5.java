@@ -1,80 +1,93 @@
 import java.util.*;
 
-public class Day5 {
+class A2 {
+    Vector<String> v = new Vector<String>();
 
-    Vector<String> v = new Vector<>(); //Generic
-    TreeSet<String> ts = new TreeSet<>();
-    Hashtable<Integer, String> ht = new Hashtable<>();
-    ArrayList<Integer> list = new ArrayList<>(); //사이즈가 없어도 저장소 생성 가능 : 가변 배열
     void in() {
-        list.add(10); //가변배열
-        list.add(20);
         v.add("봄");
         v.add("여름");
         v.add("가을");
         v.add("겨울");
-        ts.add("하나");
-        ts.add("둘");
-        ts.add("셋");
-        ts.add("넷");
-        ht.put(10, "봄"); //하나의 값으로
-        ht.put(20, "여름");
-        ht.put(30, "가을"); //object타입으로 들어감
-        ht.put(40, "겨울");
-        System.out.println(ht.size()); //4
-        System.out.println(v.size());
-        System.out.println(ts.size());
+        v.add("가을");
+        System.out.println("v.size(): " + v.size());
     }
+
     void out() {
-        Integer obj = list.get(0);
-        Integer obj2 = list.get(1); //객체 형태라 강제 형변환이 필요함(Object -> Integer)
-        int i = obj;
-        int j = obj2; //언박싱(참조형 -> 기본형)
-        for (int k = 0; i<v.size(); i++) {
-            System.out.println(k);
-        }
-        Iterator<String> iter = ts.iterator(); // ts객체를 같이 참조하는거임, Like Stack
-        while(iter.hasNext()){
-            System.out.println(obj);
-        }
-        Enumeration<Integer> e = ht.keys();
-        while(e.hasMoreElements()) {
-           Object key = e.nextElement();
-           Integer keyObj = (Integer) key;
-           int y = keyObj.intValue();
-           Object value = ht.get(key);
-           String v = (String)value;
-           System.out.println("k: " + y + "v : " + v);
-        }
-        System.out.println("obj1 : " + i + " obj2 : " + j);
-    }
-    void out2() { //이터레이터 이용방법 value값 꺼냄
-        System.out.println("(1) Iterator이용법");
-        Collection col = ht.values();
-        Iterator iter = col.iterator();
-        while (iter.hasNext()) {
-            Object obj = iter.next();
-            String value = (String) obj;
-            System.out.println("value: " + value);
+        for (int i = 0; i < v.size(); i++) {
+            //Object obj = v.get(i);
+            //String str = (String)obj;
+            String str = v.get(i);
+            System.out.println(str);
         }
     }
-
-    void out3() { //array 이용방법
-        Collection col = ht.values();
-        Object[] values = col.toArray();
-        for (int i = 0; i<values.length; i++) {
-            Object obj = values[i];
-            String value = (String)obj;
-            System.out.println("value: " + value);
-        }
-    }
-
     public static void main(String[] args) {
-        Day5 day5 = new Day5();
-        day5.in();
-        day5.out();
-        day5.out2();
-        day5.out3();
+        A2 a = new A2();
+        a.in();
+        a.out();
     }
-//돌리면 좀 이상하게 나옴 주의
 }
+class B2 {
+    TreeSet<String> ts = new TreeSet<String>();
+
+    void in() {
+        ts.add("봄");
+        ts.add("여름");
+        ts.add("가을");
+        ts.add("겨울");
+        ts.add("가을");
+        System.out.println("ts.size(): " + ts.size());
+    }
+
+    void out() {
+        //Iterator iter<String> = ts.iterator(); //오름차순 정렬
+        Iterator<String> iter = ts.descendingIterator(); //내림차순 정렬
+        while (iter.hasNext()) {
+            //Object obj = iter.next();
+            //String str = (String)obj;
+            String str = iter.next();
+            System.out.println(str);
+        }
+    }
+    public static void main(String[] args) {
+        B2 b = new B2();
+        b.in();
+        b.out();
+    }
+}
+class C2 {
+    Hashtable<Integer, String> ht = new Hashtable<Integer, String>();
+
+    void in() {
+        ht.put(10, "봄"); //put(int, String)
+        ht.put(20, "여름");
+        ht.put(30, "가을");
+        ht.put(40, "겨울");
+        //ht.put(30, "초가을"); //key를 중복시켜봄
+        ht.put(50, "가을"); //value를 중복시켜봄
+        System.out.println("ht.size(): " + ht.size());
+    }
+
+    void out() { //key와 value들을 함께 꺼냄
+        Enumeration<Integer> e = ht.keys();
+        while (e.hasMoreElements()) {
+            //Object key = e.nextElement();
+            //Integer keyObj = (Integer)key;
+            Integer keyObj = e.nextElement();
+            int k = keyObj.intValue();
+
+            //Object value = ht.get(key);
+            //String v = (String)value;
+            String v = ht.get(keyObj);
+
+            System.out.println("k:" + k + ", v:" + v);
+        }
+    }
+    public static void main(String[] args) {
+        C2 c = new C2();
+        c.in();
+        c.out();
+    }
+}
+
+
+
