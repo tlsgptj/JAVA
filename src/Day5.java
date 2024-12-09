@@ -2,10 +2,10 @@ import java.util.*;
 
 public class Day5 {
 
-    Vector<String> v = new Vector<String>(); //Generic
-    TreeSet ts = new TreeSet();
-    Hashtable ht = new Hashtable();
-    ArrayList list = new ArrayList(); //사이즈가 없어도 저장소 생성 가능 : 가변 배열
+    Vector<String> v = new Vector<>(); //Generic
+    TreeSet<String> ts = new TreeSet<>();
+    Hashtable<Integer, String> ht = new Hashtable<>();
+    ArrayList<Integer> list = new ArrayList<>(); //사이즈가 없어도 저장소 생성 가능 : 가변 배열
     void in() {
         list.add(10); //가변배열
         list.add(20);
@@ -26,24 +26,18 @@ public class Day5 {
         System.out.println(ts.size());
     }
     void out() {
-        Object obj1 = list.get(0);
-        Integer iobj1 = (Integer)obj1;
-        Object obj2 = list.get(1);
-        Integer iobj2 = (Integer)obj2; //객체 형태라 강제 형변환이 필요함(Object -> Integer)
-        int i = iobj1.intValue();
-        int j = iobj2.intValue(); //언박싱(참조형 -> 기본형)
+        Integer obj = list.get(0);
+        Integer obj2 = list.get(1); //객체 형태라 강제 형변환이 필요함(Object -> Integer)
+        int i = obj;
+        int j = obj2; //언박싱(참조형 -> 기본형)
         for (int k = 0; i<v.size(); i++) {
-            Object obj = v.get(i);
-            String str = (String)obj;
-            System.out.println(str);
+            System.out.println(k);
         }
-        Iterator iter = ts.iterator(); // ts객체를 같이 참조하는거임, Like Stack
+        Iterator<String> iter = ts.iterator(); // ts객체를 같이 참조하는거임, Like Stack
         while(iter.hasNext()){
-            Object obj = iter.next();
-            String str = (String)obj; // object -> String
-            System.out.println(str);
+            System.out.println(obj);
         }
-        Enumeration e = ht.keys();
+        Enumeration<Integer> e = ht.keys();
         while(e.hasMoreElements()) {
            Object key = e.nextElement();
            Integer keyObj = (Integer) key;
@@ -82,5 +76,5 @@ public class Day5 {
         day5.out2();
         day5.out3();
     }
-
+//돌리면 좀 이상하게 나옴 주의
 }
