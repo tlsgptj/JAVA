@@ -129,10 +129,22 @@ Collection( Data structure / 가변배열 )
       - 순서를 보전
       - 중복된 데이터를 허용
       - day07/A.java
-   2) Set
+   2) Set (수학의 집합)
       - TreeSet
       - 순서를 보전하지 않음
       - 집합이 있어서 중복된 데이터는 1개만 출력됨
    3) Map
+      - 순서를 보전하지 않음
+      - key 와 value값 한쌍으로 저장됨
+      - 정열 안됨
+      - 키는 중복이 될 수 없음, value값 중복허용O
+      - 키만 중복이 안되면 됨
+
+        만약 key값이 중복되면... value값은 나중값으로 대체됨
+
+
+   4) 확장
+       - Generic
+       - ex) Vector<String> v = new Vector<String>();
 
 
