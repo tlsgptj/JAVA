@@ -49,6 +49,7 @@ class Tip1 {
         System.out.println(str);
     }
 }
+
 // 랜덤 함수 임포트로 불러오기
 class Tip2 {
     Random r = new Random();
@@ -66,7 +67,6 @@ class Tip2 {
         pln("당첨자 : " + tip1.names[i] + " 당첨자의 번호 : " + i);
 
     }
-
 
     void pln(String str) {
         System.out.println(str);
