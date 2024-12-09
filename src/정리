@@ -133,7 +133,7 @@ Collection( Data structure / 가변배열 )
       - TreeSet
       - 순서를 보전하지 않음
       - 집합이 있어서 중복된 데이터는 1개만 출력됨
-   3) Map
+   3) Map ( 수학에서 1:1 대응이랑 비슷함 )
       - 순서를 보전하지 않음
       - key 와 value값 한쌍으로 저장됨
       - 정열 안됨
@@ -141,10 +141,19 @@ Collection( Data structure / 가변배열 )
       - 키만 중복이 안되면 됨
 
         만약 key값이 중복되면... value값은 나중값으로 대체됨
-
-
    4) 확장
-       - Generic
+       - Generic (예 : A2, B2, C2.java)
+       - AutoBoxing ( 예 : C3.java )
+         -Boxing ( 예 : Boxing.java )
+         -UnBoxing
        - ex) Vector<String> v = new Vector<String>();
+       - Enhanced Loop
+       for (int key : keys) { //진화된 루프
+          System.out.println("key: " + key);
+       }
+
+   5) N차원 배열
+      (N-1)차원 컬렉션을 데이터로(Element) 갖는 컬렉션
+
 
 
