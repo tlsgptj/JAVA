@@ -115,5 +115,24 @@ Collection( Data structure / 가변배열 )
 # 같은 타입의 '참조형'데이터 '저장소'로써 그 크기가 변할 수 있는 '객체'
 
 (1) 종류
-    -
+    - java.util.Collection
+       |               |
+      List            Set
+        |              |
+ Vector, ArrayList... TreeSet
+    - java.util.Map
+            |
+      Hashmap, hashtable,..
+
+(2) 특성
+   1) List
+      - 순서를 보전
+      - 중복된 데이터를 허용
+      - day07/A.java
+   2) Set
+      - TreeSet
+      - 순서를 보전하지 않음
+      - 집합이 있어서 중복된 데이터는 1개만 출력됨
+   3) Map
+
 
