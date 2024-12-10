@@ -73,7 +73,7 @@ class Tip2 {
     }
 }
 
-class Main {
+class Main1 {
     public static void main(String[] args) {
         Tip1 t1 = new Tip1();
         t1.read();

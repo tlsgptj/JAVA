@@ -6,8 +6,13 @@ public class SignUp {
         if (userid == null || password == null) {
             return false;
         }
-        return true;
+        if (UserRepo.findUserName(userid) != null) {
+            return false;
+        }
+        User newUser = new User(userid, password);
+        return UserRepo.addUser(newUser);
+
     }
-    UserRepo newUser = new UserRepo();
+
 
 }
