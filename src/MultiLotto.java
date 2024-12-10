@@ -11,7 +11,7 @@ class P {
         System.out.print(var0);
     }
 }
-
+//파일을 읽는 클래스
 class ReadPath {
     LottoMulti lotto;
     BufferedReader brFile;
@@ -95,6 +95,7 @@ class ReadPath {
 
     }
 }
+//Lotto의 위너를 뽑는 클래스
 class Winner {
     LottoMulti lotto;
     Random ran = new Random();
@@ -231,4 +232,3 @@ class LottoMulti {
         new LottoMulti();
     }
 }
-
