@@ -155,5 +155,17 @@ Collection( Data structure / 가변배열 )
    5) N차원 배열
       (N-1)차원 컬렉션을 데이터로(Element) 갖는 컬렉션
 
+<OOP 특성>
+
+(1) 상속성 (inheritance)
+    ex) day08.java
+    부모는 "모든 것"이 자식에게 "상속"되어지는 것(== '사용' 할 수 있는 것)
+    소스 중복을 방지하기 위해서
+(2) 다형성 (Polymorphism)
+
+(3) 은닉성 (Information Hiding)
+
+(4) 캡슐화 (Encapsulation)
+
 
 
