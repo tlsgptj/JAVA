@@ -18,4 +18,15 @@ public class UserRepo {
         }
         return null;
     }
+    public static boolean addUser(User user) {
+        UserRepo repo = new UserRepo();
+        if(findUserName(user.getUserid()) == null) {
+            users.add(user);
+            return true;
+        }
+        return false;
+    }
+    public static List<User> getAllUsers() {
+        return users;
+    }
 }
