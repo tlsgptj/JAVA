@@ -119,7 +119,7 @@ Collection( Data structure / 가변배열 )
        |               |
       List            Set
         |              |
- Vector, ArrayList... TreeSet
+ Vector, ArrayList...TreeSet
     - java.util.Map
             |
       Hashmap, hashtable,..
@@ -142,7 +142,7 @@ Collection( Data structure / 가변배열 )
 
         만약 key값이 중복되면... value값은 나중값으로 대체됨
    4) 확장
-       - Generic (예 : A2, B2, C2.java)
+       - Generic (예 : A2, B2, C2.java) -> Object
        - AutoBoxing ( 예 : C3.java )
          -Boxing ( 예 : Boxing.java )
          -UnBoxing
