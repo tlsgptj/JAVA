@@ -163,7 +163,6 @@ Collection( Data structure / 가변배열 )
     소스 중복을 방지하기 위해서
     1) 자식 개체가 생성되려면.. 먼저 부모 객체가 생성되어야 함
        (다른 생성자가 하나도 없을 때에만 JVM이 기본생성자를 만들어 줌)
-
     2) 모든 생성자의 첫라인에는 super();가 생략되어 있다.
     3) 클래스간 상속은 하나만 가능하다. -> 단일 상속
     4) 재사용성이 있다.
@@ -172,11 +171,38 @@ Collection( Data structure / 가변배열 )
     7) 부모메소드를 자식에서 재정의(==오버라이딩) 할 수 있음 -> 상속관계에서만 가능
     8) 형변환 -> 자동형변환 by JVM (자식 -> )
     9) 강제형변환은 원래의 자기타입을 되찾을 때만 가능
+    10) 형제관계는 남남 관계가 맞다.
+       - 형변환이 불가능하다.
+       - Parent -> Child = 다운캐스팅
+       - Child -> Parent = 업캐스팅
+     class Parent {
+     	String name;
+         int age;
+     }
+
+     class Child extends Parent {
+     	/*
+         String name;
+         int age;
+         */
+     	int number;
+     }
+
+     Parent p = new Parent();
+     Child c = new Child();
+
+     Parent p2 = (Parent)c; // 업캐스팅 - 자식에서 부모로
+     Child c2 = (Child)p2; // 다운캐스팅 - 부모에서 자식으로
+
 (2) 다형성 (Polymorphism) == 오버라이딩
+    - 같은 타입 객체의 같은 메소드가 다른 일을 하는 것
 
 (3) 은닉성 (Information Hiding)
+    - 외부 프로그램으로부터 '속성값'을 감추는 것
 
-(4) 캡슐화 (Encapsulation)
+(4) 캡슐화 (Encapsulation) == 은닉성은 같은 개념임
+    - 메소드의 캡슐화 : 메소드의 구현내용을 몰라도 그 형태만 알면 호출해서 사용할 수 있는 것을 캡슐화라고 함
+    - 객체의 캡슐화 : 객체가 속성값들을 감추고 선택적인 메소드로 속성값들의 일부를 접근하게 하는 것
 
 
 

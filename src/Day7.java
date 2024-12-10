@@ -48,7 +48,7 @@ class God {
     public static void main(String[] args) {
         //생성자가 존재 (누군가로부터 상속을 받아서)
         SuperMan superMan = new SuperMan();
-        //SuperMan sman4 = new PepsiMan(); -> 형제끼리 불가능
+        //SuperMan sman4 = new PepsiMan(); -> 형제끼리 불가능 //남남이다.
         /*SuperMan sman3 = (SuperMan)new Human("이순신"); -> 컴파일은 되지만 실행은 되지 않음 //코끼리한테 개미옷을 입힌다. 데이터가 깨져버림(실행시)*/
         /*SuperMan unit2 = (SuperMan) day7;*/ //강제형변환 다운캐스팅
         /*Day7 day7 = superMan;*/ //자동형변환 업캐스팅 부모는 아무런 힘이 없음 자식의 void로 찍힘
