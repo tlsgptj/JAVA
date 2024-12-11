@@ -74,7 +74,7 @@ class Main3 {
         } else {
             System.out.println("카드 등록 실패");
         }
-
+        scanner.close();
         System.out.println("본인 카드 조회");
         yourCardIs.YourCardIs(cardName);
 
