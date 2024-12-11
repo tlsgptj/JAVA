@@ -53,15 +53,23 @@ class Main3 {
         CardScan cardScan = new CardScan();
         CreditRepo yourCardIs = new CreditRepo();
         System.out.println("카드를 등록하세요!");
-        System.out.println("카드 이름을 입력하세요!");
-        String cardName = scanner.nextLine();
-        System.out.println("카드를 번호를 입력하세요!");
-        String cardNum = scanner.nextLine();
-        System.out.println("카드 유효기간을 입력하세요!");
-        String year = scanner.nextLine();
-        System.out.println("카드 CVC번호를 입력하세요!");
-        int cvcNum = Integer.parseInt(scanner.nextLine());
-        if(cardScan.cardscan(cardName, cardNum, year, cvcNum)) {
+        String cardName = null;
+        String cardNum = null;
+        String year = null;
+        int cvcNum = 0;
+        try {
+            System.out.println("카드 이름을 입력하세요!");
+            cardName = scanner.nextLine();
+            System.out.println("카드를 번호를 입력하세요!");
+            cardNum = scanner.nextLine();
+            System.out.println("카드 유효기간을 입력하세요!");
+            year = scanner.nextLine();
+            System.out.println("카드 CVC번호를 입력하세요!");
+            cvcNum = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.print("유효한 값을 입력하세요!");
+        }
+        if (cardScan.cardscan(cardName, cardNum, year, cvcNum)) {
             System.out.println("카드가 정상적으로 등록되었습니다.");
         } else {
             System.out.println("카드 등록 실패");
@@ -72,3 +80,5 @@ class Main3 {
 
     }
 }
+
+//예외 처리 안해서 이런 오류가 발생
