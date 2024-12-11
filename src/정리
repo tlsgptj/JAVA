@@ -194,12 +194,44 @@ Collection( Data structure / 가변배열 )
      Parent p2 = (Parent)c; // 업캐스팅 - 자식에서 부모로
      Child c2 = (Child)p2; // 다운캐스팅 - 부모에서 자식으로
 
-(2) 다형성 (Polymorphism) == 오버라이딩
+(2) 다형성 (Polymorphism) == 오버라이딩(재정의)
     - 같은 타입 객체의 같은 메소드가 다른 일을 하는 것
 
 (3) 은닉성 (Information Hiding)
     - 외부 프로그램으로부터 '속성값'을 감추는 것
 
 (4) 캡슐화 (Encapsulation) == 은닉성은 같은 개념임
-    - 메소드의 캡슐화 : 메소드의 구현내용을 몰라도 그 형태만 알면 호출해서 사용할 수 있는 것을 캡슐화라고 함
+    - 메소드의 캡슐화 : 메소드의 구현내용을 몰라도 그 형태만 알면 호출해서 사용할 수 있는 것을 캡슐화라고 함 (이름 파라미터 반환값)
     - 객체의 캡슐화 : 객체가 속성값들을 감추고 선택적인 메소드로 속성값들의 일부를 접근하게 하는 것
+
+<예외처리>
+(1) 예외(Exception)
+    프로그램이 정상적으로 진행되지 못하게 하는 '돌발상황' (객체)
+    int i = Integer.parseInt("가나다")
+    숫자가 아닌 형태의 문자열을 숫자로 바꾸려 할때 발생함
+    채팅하다가 상대방이 채팅방을 나가 버릴 때
+    온라인 게임중에 전원케이블 차버렸을 때
+    게임 서버 다운
+
+(2) 처리 목적
+    프로그램 진행시에 발생할 수 있는 "돌발상황"을 예외로 미리 정해놓고,
+    해당하는 예외가 발생할 경우 '적절한 조치'를 취해서, 프로그램이 정상작동
+    되도록 하는 것을 예외처리라고 한다.
+
+(3) 계층도
+    Object - Throwable - error/exception - compileException/RuntimeException
+    ex) IOexception -> Compileexception
+        NumberFormatException -> RuntimeException
+
+    class A {
+        void m() {
+            String str = "100";
+            int i = Integer.parseInt(str);
+            System.out.println("i : " + (i+1));
+        }
+        public static void main(String[] args) {
+            new A().m();
+        }
+    }
+    # 인간이 개입할 때 try-catch 문을 사용한다.
+(4) 특징 //Tester
