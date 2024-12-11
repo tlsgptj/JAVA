@@ -9,7 +9,8 @@ public class Credit {
     private String year;
     private int CVCnum;
 
-    public void Card(String Cardname, String Cardnum, String year, int CVCnum) {
+    //그냥 void credit이 아니라 credit으로 써줘야함 왜그럴까?
+    public Credit(String Cardname, String Cardnum, String year, int CVCnum) {
         this.Cardname = Cardname;
         this.Cardnum = Cardnum;
         this.year = year;
@@ -35,19 +36,14 @@ public class Credit {
 
 class CardScan {
     public boolean cardscan(String Cardname, String Cardnum, String year, Integer CVCnum) {
-      if (Cardname == null && Cardnum == null && year == null && CVCnum == null) {
-          return false;
-      } else {
-          Credit credit = new Credit(Cardname, Cardnum, year, CVCnum);
-
-
-      }
+        if (Cardname == null && Cardnum == null && year == null && CVCnum == null) {
+            return false;
+        } else {
+            Credit credit = new Credit(Cardname, Cardnum, year, CVCnum);
+            CreditRepo.addCard(credit);
+        }
+        return true;
     }
-
-
-}
-class YourCardIs {
-
 }
 
 class Main3 {
@@ -55,20 +51,24 @@ class Main3 {
         //이거 자바 유틸 클래스에 들어있어서 사용 가능 이거 써줄때 꼭 System.in을 써야함 아니면 에러남 왜그런지는 모르겠음
         Scanner scanner = new Scanner(System.in);
         CardScan cardScan = new CardScan();
-        YourCardIs yourCardIs = new YourCardIs();
+        CreditRepo yourCardIs = new CreditRepo();
         System.out.println("카드를 등록하세요!");
         System.out.println("카드 이름을 입력하세요!");
-        scanner.nextLine();
+        String cardName = scanner.nextLine();
         System.out.println("카드를 번호를 입력하세요!");
-        scanner.nextLine();
+        String cardNum = scanner.nextLine();
         System.out.println("카드 유효기간을 입력하세요!");
-        scanner.nextLine();
+        String year = scanner.nextLine();
         System.out.println("카드 CVC번호를 입력하세요!");
-        scanner.nextLine();
-        System.out.println("카드가 정상적으로 등록되었습니다.");
+        int cvcNum = Integer.parseInt(scanner.nextLine());
+        if(cardScan.cardscan(cardName, cardNum, year, cvcNum)) {
+            System.out.println("카드가 정상적으로 등록되었습니다.");
+        } else {
+            System.out.println("카드 등록 실패");
+        }
 
         System.out.println("본인 카드 조회");
-
+        yourCardIs.YourCardIs(cardName);
 
     }
 }
