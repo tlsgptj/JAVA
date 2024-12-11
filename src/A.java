@@ -43,6 +43,7 @@ class A {
         } catch (Exception e) {
             System.out.println("5");
             return; //메인절로 돌아감 -> finally가 더 쎔, 그러고 return 호출 메인 시행
+            //System.exit(-1); // 1,3번까지만 찍힘
         } finally {
             System.out.println("6"); //무조건 수행하는 거라고 생각하면 됨
         }

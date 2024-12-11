@@ -270,3 +270,8 @@ Collection( Data structure / 가변배열 )
     ex) day09/C.java
     1) 항상 수행되는 절
        - 예외 발생 여부와 상관없이 수행
+       - 심지어... return을 만나더라도 finally절 수행 후 리턴
+    2) try절이 나오면.. catch절이 나오던지, finally절이 나오던지... 둘다 나오던지 해야 함
+    3) 얘는 못이김 -> System.exit(0);, System.exit(-1);
+
+       cf) API를 볼 줄 알아야 함
