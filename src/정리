@@ -222,6 +222,7 @@ Collection( Data structure / 가변배열 )
     Object - Throwable - error/exception - compileException/RuntimeException
     ex) IOexception -> Compileexception
         NumberFormatException -> RuntimeException
+        런타임 익셉션이 더 처리하기 어려움
 
     class A {
         void m() {
@@ -264,7 +265,7 @@ Collection( Data structure / 가변배열 )
        Why? 왜 하위예외를 만들어서 먼저 잡아주는 것이 좋을까? 구체적이고 세련된 처리를 위해서 잡아줌
 
 (7) 2개 이상의 예외를 떠넘길 때
-    cf) '떠넘김'과 '때려잡음' 처리를 섞어 사용해도 됨
+    cf) '떠넘김(throws)'과 '때려잡음(try/catch)' 처리를 섞어 사용해도 됨
 
 (8) finally 절
     ex) day09/C.java
@@ -275,3 +276,12 @@ Collection( Data structure / 가변배열 )
     3) 얘는 못이김 -> System.exit(0);, System.exit(-1);
 
        cf) API를 볼 줄 알아야 함
+
+< 제한자 (Modifier) >
+클래스, 변수, 생성자, 메소드 앞에 붙어거 기능을 '제한' 하는 예약어
+(1) 접근제한자 (Access Modifier)
+    1) 종류
+       <1> public : 접근제한이 없음
+       <2> private
+       <3> protected :
+       <4> default :
