@@ -34,7 +34,7 @@ class C {
         //static int j = 1; //불가!
         System.out.println("m()");
     }
-    void m2(){
+    static void m2(){
         System.out.println("m2()");
     }
     public static void main(String[] args)
