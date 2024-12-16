@@ -373,17 +373,17 @@ Collection( Data structure / 가변배열 )
 
 < 인터페이스 >
 (1) 정의
-    '상수', '추상메소드', 'static 메소드', 'default 메소드' 로 구성된 껍데기
+    '상수', '추상메소드', 'static 메소드', 'default 메소드 (이미 구성됨)' 로 구성된 껍데기 / 통로 / 메뉴판
 (2) 특징
     1) 인터페이스 객체는 '완벽한 자식클래스'를 만들어서, 자식 객체 생성 후 형변환해서 만듬
     2) 인터페이스 static 메소드는 인터페이스 이름으로만 접근이 가능함
     3) 자식클래스를 만들때는 implements 예약어를 사용함
     4) 모든 추상메소드 앞에는 public abstract 생략
        interface앞에는 abstract가 생략되어있음
-       모든 멤버변수 앞에는 public static final가 생략되어있음
+       모든 멤버변수 앞에는 public, static, final가 생략되어있음
        static 메소드와 default 메소드 앞에 public이 생략되어있음
     5) 인터페이스는 다중상속을 가능하게 함
-    (class D, implements DInter1, DInter2...)
+    (class D (extends object) implements DInter1, DInter2...)
     6) 인터페이스끼리도 다중상속이 가능함
     (interface DInter extends DInter1, DInter2,...)
 
@@ -396,5 +396,13 @@ Collection( Data structure / 가변배열 )
     2) 추상클래스는 일반멤버(상수X) 일반멤버와 생성자를 가질 수 있음
     3) 구현 인터페이스의 메소드 앞에는 'default'가 나와야 함
 
-< 하산 >
-왜.. 쓰는가?
+< 하산-> Why? >
+왜.. 쓰는가? -> 추상메소드랑 인터페이스 왜 쓰는가에 대한 근본적인 질문
+
+class B implements ss {
+    public void c() {} -> 이거 함수 구현된거임 ㅇㅋ?
+}
+
+
+
+
