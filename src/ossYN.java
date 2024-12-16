@@ -13,7 +13,7 @@ public class ossYN {
         th2.start();
         try {
             th1.join();
-            th2.join();
+            th2.join(); //문고리를 걸어주는 것
         } catch (InterruptedException ie) {}
         System.out.print("i : " + i);
     }
