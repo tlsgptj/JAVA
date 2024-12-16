@@ -403,6 +403,29 @@ class B implements ss {
     public void c() {} -> 이거 함수 구현된거임 ㅇㅋ?
 }
 
+내부클래스 ( Inner Class)
+- 클래스안의 클래스
 
+(1) 모양
+ class A {
+    class AInner {
 
+    }
+ }
+
+(2) 객체생성
+1) A.AInner1 in1 = new A().new AInner();
+외부클래스 써주고 내부클래스 써줌
+
+(3) main() 위치
+   1) 제3클래스 or Outter클래스에 있을 때
+      실행 > java.A
+      실행 > java AUser
+   2) Inner클래스에 있을 경우
+      실행 > java.A$AInner1 //none static
+      실행 > java.A$AInner2 // static
+
+(4) 추가
+    1) depth는 무한대
+    2) 인터페이스는 내부에 선언이 가능할까?
 
