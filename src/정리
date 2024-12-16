@@ -437,9 +437,14 @@ class B implements ss {
        - class 구현클래스 implements 외부클래스 or 내부클래스
        - 외부클래스 or 외부인터페이스.내부인터페이스 변수 = new 구현클래스();
 
-(5) 왜 쓰는것일까?
+(5) 왜 쓰는것일까? (중요) '외부클래스의 자원을 '자기것처럼 사용' 해야함'
     - HW와 OS간의 Interface : HW의 접근통로
     - REST(FUL) API (Application Programming Interface) : URL을 가지고 데이터베이스에 접근 통로
     - Lib API Specification : 클래스 라이브러리로 접근하는 통로
     - GUI (Graphic User Interface) : SW 로직에 접근하는 통로
     - class / interface : 구현객체 '접근통로'
+
+
+Q. 뭐를 쓰면 외부클래스를 안써도 될까?
+    - this의 세번째 용법을 사용하면 내부 클래스를 안써도 됨
+    - 단점 : 항상 this를 넘겨줘야함ㅜㅜ

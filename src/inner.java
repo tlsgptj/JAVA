@@ -71,6 +71,7 @@ public class inner {
     }
 }
 
+//이너클래스에서 접근 가능?
 
 
 
