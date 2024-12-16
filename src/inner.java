@@ -20,11 +20,25 @@ class B7 {
         int i = 10;
         void m();
     }
+    static interface BInnerInter2 {
+        int J = 20;
+        void m2();
+    }
 }
 class BUser123 implements B7.BInner {
     public void m(){};
-    public static void main(String args) {
+    public static void main(String[] args) {
         System.out.println("BInnerInterChild m()");
+    }
+}
+interface C8 {
+    interface CInnerInter1 {
+        int I = 10;
+        void m1();
+    }
+    static interface CInnerInter2 {
+        int J = 20;
+        void m2();
     }
 }
 public class inner {
@@ -39,4 +53,6 @@ public class inner {
         in1.m();
     }
 }
+
+
 

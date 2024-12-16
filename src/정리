@@ -425,7 +425,20 @@ class B implements ss {
       실행 > java.A$AInner1 //none static
       실행 > java.A$AInner2 // static
 
-(4) 추가
+(4) 확장
     1) depth는 무한대
-    2) 인터페이스는 내부에 선언이 가능할까?
+    2) class안에 '내부 interface', 'static 내부 interface' 가능
+       ex) day12/B.java
+       참고) class 구현클래스 외부클래스 or 외부인터페이스.내부인터페이스{}
+             외부클래스 or 외부인터페이스.내인 변수 = new 구현클래스();
 
+    3) interface 안에 '내부 interface', 'static 내부 interface' 가능
+    4) 위의 2), 3) 모두는 다음과 같음
+       - class 구현클래스 implements 외부클래스 or 내부클래스
+       - 외부클래스 or 외부인터페이스.내부인터페이스 변수 = new 구현클래스();
+
+(5) 왜 쓰는것일까?
+    - REST(FUL) API (Application Programming Interface) : URL을 가지고 데이터베이스에 접근 통로
+    - Lib API Specification : 클래스 라이브러리로 접근하는 통로
+    - GUI (Graphic User Interface) : SW 로직에 접근하는 통로
+    - class / interface : 구현객체접근통로
