@@ -119,7 +119,6 @@ class Lotto1Rate {
             var1.readF();
         } catch (IOException var3) {
         }
-
         var1.makeR100();
     }
 }
