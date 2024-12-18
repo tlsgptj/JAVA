@@ -2,7 +2,7 @@ import javax.management.monitor.Monitor;
 import java.io.*;
 
 //keyboard -> Moniter
-
+//Keyboard -> File
 public class Stream {
     InputStream is = System.in; //keyboard
     OutputStream os = System.out; //Monitor
@@ -14,8 +14,15 @@ public class Stream {
 
         }
     }
+    //키보드에서 읽어오는것
     void initKey() {
         is = System.in;
+    }
+    //파일에서 읽어오는 것
+    void initFile() {
+        try {
+            is = new FileInputStream(fname);
+        } catch (FileNotFoundException fnfe) {}
     }
     void inOut1() throws IOException {
         byte[] bs = new byte[8];
@@ -50,6 +57,7 @@ public class Stream {
     }
     public static void main(String[] args) throws IOException {
         Stream a = new Stream();
+        a.initFile();
         a.initKey();
         a.inOut1();
         a.inOut2();
