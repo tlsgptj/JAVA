@@ -11,7 +11,7 @@ public class Stream {
         try{
             is = new FileInputStream(fname);
         } catch (FileNotFoundException fame) {
-
+            System.out.println("파일을 찾을 수 없습니다.");
         }
     }
     //키보드에서 읽어오는것
@@ -21,10 +21,11 @@ public class Stream {
     //파일에서 읽어오는 것
     void initFile() {
         try {
+            //is 객체 생성
             is = new FileInputStream(fname);
         } catch (FileNotFoundException fnfe) {}
     }
-    void inOut1() throws IOException {
+    void inOut1(){
         byte[] bs = new byte[8];
         try {
             int i = 0;
@@ -43,9 +44,10 @@ public class Stream {
     }
     void inOut2() {
         try{
+            //바이트 객체 생성
             byte[] bs = is.readAllBytes();
-            os.write(bs);
-            os.flush();
+            os.write(bs); //바이트 쓰기
+            os.flush(); //메모리 위치가 가득차면 모든 스트림을 플러시, 완전히 실행
             System.out.println("읽은 총 바이트수 : " + bs.length);
         } catch (IOException ie) {
         } finally {
