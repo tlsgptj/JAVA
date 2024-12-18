@@ -519,3 +519,55 @@ Q. 뭐를 쓰면 외부클래스를 안써도 될까?
         //동기화가 필요한 로직들...
         }
      }
+
+< 람다식 >
+
+정의: 익명 함수(Anonymous function)를 지칭하는 용어
+
+(1) 파라미터와 리턴값을 달리한 람다식의 원리
+
+< Advanced >
+1) IO(Input과 Output)
+(1) 스트림(Stream)
+    -> 데이터의 흐름
+    Data Source(근원지) -> 데이터의 목적지(data destination) 방향성을 가지고 있음
+(2) 특징
+    1) First In First Out (Queue)
+    2) 지연성
+    3) 단방향성
+    4) 유연성
+        예) BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            InputStream reader = System.in; //(근본)
+            InputStreamReader isr = new InputStreamReader(is); //(다리)
+            BufferedReader br = new BufferedReader(isr); //(목적)
+(3) 표준입력/출력
+    키보드(System.in) --> 모니터(System.out)
+    System.out.println -> PrintStream 메소드 안에 들어있던 것
+(4) 구분
+    1) 전송단위
+        <1> 바이트 스트림 (1바이트 스트림)
+            ex) XXXStream
+        <2> 16비트 (1byte - 8bit) 문자 스트림 (2바이트 스트림)
+            ex) XXXReader, XXXWriter
+    2) 입출력
+        <1> 입력
+            ex) XXXInputStream, XXXReader
+        <2> 출력
+            ex) XXXOutputStream, XXXWriter
+    3) 특성
+        <1> 근본(node Stream) : '근원지', '목적지'와 직접 연결된 스트림
+            ex) FileInputStream, FileOutputStream, ...
+        <2> 다리(Bridge Stream) : 1byte스트림을 2byte스트림 변경
+            ex) InputStreamReader, OutputStreamWriter, ...
+        <3> 목적(Filter Stream) : '원하는 목적'의 기능을 가진 스트림
+            ex) BufferedReader, PrintWriter, ...
+(5) 주요스트림
+    (1) InputStream / OutputStream // 조상(바이트)
+
+2) NetWork
+
+3) GUI(graphic user Interface) -
+
+4) JDBC(Java Database Sys) -
+
+데이터 보존

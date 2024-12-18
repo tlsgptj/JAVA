@@ -20,7 +20,7 @@ class Lotto1Rate {
 
     Lotto1Rate() {
         this.brKey = new BufferedReader(new InputStreamReader(System.in));
-        this.names = new ArrayList();
+        this.names = new ArrayList<>();
         this.idxRate = -1;
         this.r = new Random();
     }
