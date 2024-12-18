@@ -48,7 +48,7 @@ public class Stream {
             byte[] bs = is.readAllBytes();
             os.write(bs); //바이트 쓰기
             os.flush(); //메모리 위치가 가득차면 모든 스트림을 플러시, 완전히 실행
-            System.out.println("읽은 총 바이트수 : " + bs.length);
+            System.out.println("읽은 총 바이트수 : " + bs.length); //bs.length를 활용하여 길이를 숫자로 표기
         } catch (IOException ie) {
         } finally {
             try {
