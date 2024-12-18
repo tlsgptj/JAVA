@@ -565,11 +565,11 @@ Q. 뭐를 쓰면 외부클래스를 안써도 될까?
     (1) InputStream / OutputStream // 조상(바이트)
     (2) FileInputStream / FileOutputStream // 파일
     (3) BufferedInputStream / BufferedOutputStream // 버퍼강화
+    (4) DataInputStream / DataOutputStream //조상(바이트)
+        -> 기본형을 읽고 쓸수 있다..
 
 2) NetWork
 
-3) GUI(graphic user Interface) -
+3) GUI(graphic user Interface)
 
-4) JDBC(Java Database Sys) -
-
-데이터 보존
+4) JDBC(Java Database Sys)
