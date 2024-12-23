@@ -47,5 +47,31 @@ public class MClient {
 class UserInner extends Thread{
     Socket socket;
     DataOutputStream dos;
-    BufferedReader br = new
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    UserInner(Socket socket, String name) {
+        this.socket = socket;
+        try {
+            dos = new DataOutputStream(socket.getOutputStream());
+            dos.writeUTF(name);
+            dos.flush();
+        } catch (IOException ie) {}
+    }
+    public void run() {
+        String chat="";
+        try{
+            while (true) {
+                chat = br.readLine();
+                dos.writeUTF(chat);
+                dos.flush();
+                if(chat.equals("/quit")) break;
+            }
+        } catch (IOException e) {}
+        finally {
+            try {
+                dos.close();
+                br.close();
+                socket.close();
+            } catch (IOException e) {}
+        }
+    }
 }
