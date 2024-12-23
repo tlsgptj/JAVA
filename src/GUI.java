@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 
 class GUI extends JFrame {
     JButton b;
+    //어떤 컴포넌트가 주체가 될 것인지
     void init(){
         b = new JButton("자바의 버튼");
         ActionListener l = new ActionListener() {
@@ -16,6 +17,7 @@ class GUI extends JFrame {
         add(b);
         setUI();
     }
+
     void setUI() {
         setTitle("GUI Test Ver 1.0");
         setVisible(true);
@@ -27,5 +29,19 @@ class GUI extends JFrame {
 
     public static void main(String[] args) {
         new GUI().init();
+    }
+
+    //이렇게도 가능함 클래스 독립도 가능함
+    class A3handler implements ActionListener {
+        GUI a3;
+        A3handler(GUI a3) {
+            this.a3 = a3;
+        }
+        public void actionPerformed(ActionEvent e) {
+            //Object obj = e.getSource();
+            //JButton b = (JButton)obj;
+            b.setText("처리됨");
+            a3.setTitle("크리스마스");
+        }
     }
 }
