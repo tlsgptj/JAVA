@@ -38,6 +38,7 @@ class GUIHome extends JFrame implements ActionListener {
     void showFC(int var1) {
         JFileChooser var2 = new JFileChooser();
         FileNameExtensionFilter var3 = new FileNameExtensionFilter("파일열기", "txt");
+        //txt를 추가해야함
         var2.addChoosableFileFilter(var3);
         boolean var4 = true;
         int var6;
