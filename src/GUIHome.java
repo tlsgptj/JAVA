@@ -24,7 +24,7 @@ class GUIHome extends JFrame implements ActionListener {
     }
     void init() {
         this.cp = this.getContentPane();
-        this.cp = new JScrollPane(this.tp);
+        this.sp = new JScrollPane(this.tp);
         this.cp.add(this.sp);
         this.cp.add(this.bClear, "North");
         this.p.setLayout(new GridLayout(1, 2));
@@ -137,6 +137,7 @@ class GUIHome extends JFrame implements ActionListener {
     public static void main(String[] var0) {
         GUIHome guiHome = new GUIHome();
         guiHome.UiTest2();
+        guiHome.init();
 
     }
 }
